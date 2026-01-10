@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HR Tournament App</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Join HR Tournament to play daily esports tournaments, build your gamer profile, and win amazing prizes." />
+  <meta name="keywords" content="free fire tournament app, esports app, HR Tournament, gaming tournaments" />
+  <meta name="author" content="HR Tournament" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical (forces www in Google search) -->
+  <link rel="canonical" href="https://www.hrtournament.in/" />
+
+  <!-- Favicons (ROOT based, NOT GitHub URLs) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#070B28">
+  <meta name="background-color" content="#070B28">
+
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HR Tournament">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .top-logo-banner {
+      background-color: #060917;
+      text-align: center;
+      padding: 0rem 0;
+    }
+
+    .top-logo-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+    }
+
+    .banner-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .banner-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+    }
+
+    .banner-text h2 {
+      font-size: 2rem;
+    }
+
+    .banner-buttons-row {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .download-btn, .login-btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.2rem 1.2rem;
+      border: 2px solid white;
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    .download-btn img, .login-btn img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .banner-separator {
+      height: 5px;
+      background: yellow;
+    }
+
+    .section-title-block, .refer-section {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #fff;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .title-shape {
+      width: 120px;
+      margin: 0.5rem auto;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 1rem auto;
+      color: #333;
+    }
+
+    .dark-section, .why-section{
+      background-color: #070B28;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .esports-section {
+      background-color: #FFC609;
+      color: #000;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .games-image, .refer-image, .constant-image {
+      width: 95%;
+      max-width: 600px;
+      margin: 1rem auto;
+      display: block;
+    }
+    
+    .get-app-section {
+      background-color: #F92C2C;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 600px;
+      height: 315px;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .circle-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #070B28;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    .social-section {
+      background-color: #070B28;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .social-section h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .legal-links {
+      background-color: #070B28;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .legal-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .get-app-section {
+      background: url('https://iili.io/FrS8bDu.md.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .esports-section {
+      background: url('https://iili.io/FrS8bDu.md.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  </style>
+  <script>
+  if (location.hostname.includes("github.io")) {
+    location.replace("https://www.hrtournament.in" + location.pathname + location.search);
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="top-logo-banner">
+    <img src="https://i.ibb.co/XfZhGPpD/unnamed-4.jpg" alt="HR Tournament Logo" class="top-logo-img" />
+  </div>
+
+  <!-- Banner -->
+  <div class="banner-wrapper">
+    <img src="https://www.gamerji.com/img/banner.jpg" alt="Banner" class="banner-img" />
+    <div class="banner-text">
+      <h2>Play Esports Tournament & Win Rewards</h2>
+      <div class="banner-buttons-row">
+        <a href="https://ga-fs.primexop.com/12399/androidBuilds/hr-tournamentV2.apk" class="download-btn">
+          <img src="https://i.ibb.co/tkKJwqz/images.jpg" /> Download Android App
+        </a>
+        <a href="https://ga.primexop.com/hr-tournament/auth/login" class="login-btn">
+          <img src="https://i.ibb.co/tnWvJLq/globe-symbol-planet-earth-internet-browser-sign-outline-modern-design-element-simple-black-flat-vect.jpg" /> Login on Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-separator"></div>
+
+  <!-- Games Section -->
+  <div class="section-title-block">
+    <div class="section-title">Games</div>
+    <img src="https://i.ibb.co/39HjzHtf/title-shape.png" class="title-shape" />
+    <p class="section-subtitle">Daily tournaments for your favourite games. Build your stats & win exciting prizes!</p>
+    <img src="https://i.ibb.co/DHPf4Kks/FFM.png" class="games-image" />
+  </div>
+
+  <!-- Gaming Stats -->
+  <div class="dark-section">
+    <div class="section-title">Gaming Stats</div>
+    <img src="https://i.ibb.co/39HjzHtf/title-shape.png" class="title-shape" />
+    <p class="section-subtitle white">Build your journey as a gamer with us by enhancing your profile & checking vital statistics for your performance.</p>
+  </div>
+
+  <!-- Discover Section -->
+  <div class="section-title-block">
+    <div class="section-title">Discover</div>
+    <img src="https://i.ibb.co/39HjzHtf/title-shape.png" class="title-shape" />
+    <p class="section-subtitle">Discover our exciting features for stats, insights & tips to help you improve your gaming skills.</p>
+    <a href="https://ga-fs.primexop.com/12399/androidBuilds/hr-tournamentV2.apk" class="download-btn" style="background-color:#000">
+      <img src="https://i.ibb.co/tkKJwqz/images.jpg" /> Download Android App
+    </a>
+    <img src="https://iili.io/FhypUib.md.png" class="constant-image" />
+  </div>
+
+  <!-- Esports Section -->
+  <div class="esports-section">
+    <div class="section-title">Esports Tournaments on Your Platform</div>
+    <img src="https://i.ibb.co/39HjzHtf/title-shape.png" class="title-shape" />
+    <p class="section-subtitle white">
+      Start hosting Esports tournaments for all the popular games on your platform and engage your users.
+    </p>
+  </div>
+
+  <!-- Refer Section -->
+  <div class="refer-section">
+    <div class="section-title">Refer a Friend</div>
+    <img src="https://i.ibb.co/39HjzHtf/title-shape.png" class="title-shape" />
+    <img src="https://i.ibb.co/svwRXHPz/refer-friend-left-img.png" class="refer-image" />
+    <p class="section-subtitle">When your friend signs up, you get free 5 coins & your friend gets 5 coins.</p>
+    <a href="https://ga-fs.primexop.com/12399/androidBuilds/hr-tournamentV2.apk" class="download-btn" style="background-color:#000">
+      <img src="https://i.ibb.co/tkKJwqz/images.jpg" /> Download Android App
+    </a>
+  </div>
+  
+  <div style="background-color: #fff; padding: 1rem 0;">
+    <img src="https://iili.io/FUs5cb9.md.png" alt="Esports Visual" class="constant-image" />
+  </div>
+
+  <!-- Get App -->
+  <div class="get-app-section">
+    <div class="section-title">Get HR Tournament App Now</div>
+    <p class="section-subtitle">Download our app and build your profile with cool avatars and stats from each tournament.</p>
+    <a href="https://ga-fs.primexop.com/12399/androidBuilds/hr-tournamentV2.apk" class="download-btn" style="background-color:#000">
+      <img src="https://i.ibb.co/tkKJwqz/images.jpg" /> Download Android App
+    </a>
+  </div>
+
+  <!-- Social -->
+  <div class="social-section">
+    <h2>Social Channel</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/hr.touranment?igsh=N2luY3UydXVhbTN6"><img src="https://i.ibb.co/ZRpHLnJY/instagram-button-icon-set-instagram-screen-social-media-and-social-network-interface-template-storie.png" alt="Instagram"></a>
+      <a href="https://youtube.com/@hrtournament?si=JTHW4OC3kvJNU6rU"><img src="https://i.ibb.co/1f08c8qP/1000001541-removebg-preview.png" alt="YouTube"></a>
+      <a href="https://t.me/hrtouranment"><img src="https://i.ibb.co/7d1Jrxbf/1024px-Telegram-logo-svg.png" alt="Telegram"></a>
+      <a href="https://whatsapp.com/channel/0029Vb6wIJfEQIaiovi7gE2A"><img src="https://i.ibb.co/67Rq0tCN/1000105717-removebg-preview.png" alt="Discord"></a>
+    </div>
+  </div>
+
+  <!-- Legal Links -->
+  <div class="legal-links">
+    <a href="/disclaimer">Disclaimer</a> |
+    <a href="/terms">Terms & Conditions</a> |
+    <a href="/privacy">Privacy Policy</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>&copy; 2026 HR Tournament. All rights reserved.</footer>
+</body>
+  </html>
