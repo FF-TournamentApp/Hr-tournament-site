@@ -13,7 +13,8 @@
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical (forces www in Google search) -->
-  <link rel="canonical" href="https://www.hrtournament.in/" />
+  <link rel="canonical" href="https://hrtournament.in/" />
+  <meta property="og:url" content="https://hrtournament.in/" />
 
   <!-- Favicons (ROOT based, NOT GitHub URLs) -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -252,6 +253,11 @@
       padding: 2rem 1rem;
     }
   </style>
+  <script>
+  if (location.hostname === "www.hrtournament.in") {
+    location.replace("https://hrtournament.in" + location.pathname + location.search);
+  }
+  </script>
 </head>
 <body>
 
